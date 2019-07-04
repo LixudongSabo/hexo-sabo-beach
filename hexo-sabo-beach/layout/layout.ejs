@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="<%= config.language %>">
+<%- partial('_partial/head') %>
+
+<body>
+
+<%- partial('_partial/header') %>
+<%- body %>
+<%- partial('_partial/footer') %>
+
+<%- partial('_partial/search') %>
+<%- partial('_partial/back-top') %>
+
+<% if (theme.rightclick.enable) { %>
+<div class="GalMenu GalDropDown">
+	<div class="circle" id="gal">
+		<div class="ring">
+			<a href="<%- theme.rightclick.index %>" title="" class="menuItem">首页</a>
+			<a href="<%- theme.rightclick.blog %>" title="" class="menuItem">博客</a>
+			<a href="<%- theme.rightclick.project %>" title="" class="menuItem">项目</a>
+			<a href="<%- theme.rightclick.synthesize %>" title="" class="menuItem">百度</a>
+			<a href="<%- theme.rightclick.sundry %>" title="" class="menuItem">好友</a>
+			<a href="<%- theme.rightclick.leaveword %>" title="" class="menuItem">留言</a></div>
+		<audio id="audio" src="/libs/others/rightclick/niconiconi.mp3"></audio>
+	</div>
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+<% } %>
+
+<script src="<%- theme.libs.js.materialize %>"></script>
+<script src="<%- theme.libs.js.masonry %>"></script>
+<script src="<%- theme.libs.js.aos %>"></script>
+<script src="<%- theme.libs.js.scrollProgress %>"></script>
+<script src="<%- theme.libs.js.lightgallery %>"></script>
+<script src="/js/matery.js"></script>
+<script src="<%- theme.libs.js.girlfriend %>"></script>
+<script src="<%- theme.libs.js.friend %>"></script>
+<script src="<%- theme.libs.js.girl %>"></script>
+
+<%- partial('_partial/google-analytics') %>
+<% if (theme.mouse.enable) { %>
+    <script src="<%- theme.libs.js.mouse %>"></script>
+<% } %>
+<% if (theme.rightclick.enable) { %>
+	<script src="<%- theme.libs.js.right%>"></script>
+	<script src="<%- theme.libs.js.click %>"></script>
+<% } %>
+<% if (theme.busuanziStatistics && theme.busuanziStatistics.enable) { %>
+    <script async src="<%- theme.libs.js.busuanzi %>"></script>
+<% } %>
+
+</body>
+</html>
